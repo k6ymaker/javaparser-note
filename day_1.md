@@ -37,7 +37,7 @@ Y+Z，分为 Y、+、Z。
 
 
 
-##在JAVAPARSER:VISITED代码示例
+## 在JAVAPARSER:VISITED代码示例
 
 ```java
 package com.github.javaparser;
@@ -114,9 +114,7 @@ public class TimePrinter {
 
 ​		
 
-那这些节点到底是怎么分类的呢？
-
-从[文档](https://www.javadoc.io/static/com.github.javaparser/javaparser-core/3.0.0-alpha.10/overview-summary.html)中package的组织中看出，有下面这些结构:
+那这些节点到底是怎么分类的呢？从[文档](https://www.javadoc.io/static/com.github.javaparser/javaparser-core/3.0.0-alpha.10/overview-summary.html)中package的组织中看出，有下面这些结构:
 
 ![day_1_1](./picture/day_1_5.jpeg)
 
@@ -133,7 +131,7 @@ public class TimePrinter {
 
 ​		
 
-##参考
+## 参考
 
 [javadoc](https://www.javadoc.io/doc/com.github.javaparser/javaparser-core/latest/index.html)
 
