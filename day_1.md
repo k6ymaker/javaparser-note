@@ -21,11 +21,11 @@
 
 首先什么是抽象语法🌲，我的理解就是把代码按照语法结构，抽象成数据，这种数据结构是一个树。
 
-像 W*X+(Y+Z)，可以分成W\*X 与Y+Z的和。
+W*X+(Y+Z)，可以分成 W\*X 、+、Y+Z。
 
-W\*X又可以分成W、称号、X。
+W\*X，分成 W、*、X。
 
-Y+Z分为Y、加号、Z。
+Y+Z，分为 Y、+、Z。
 
 这样一个式子被分解成为一棵树。
 
@@ -37,12 +37,13 @@ Y+Z分为Y、加号、Z。
 
 
 
-**在JAVAPARSER:VISITED这本书中A Brief Introduction to Abstract Syntax Trees章中，给了以下的代码示例。**
+##在JAVAPARSER:VISITED代码示例
 
-```
+```java
 package com.github.javaparser;
 import java.time.LocalDateTime
 
+//这本书中A Brief Introduction to Abstract Syntax Trees中
 public class TimePrinter {
     public static void main(String[] args) {
         System.out.println(LocalDateTime.now());
@@ -50,16 +51,20 @@ public class TimePrinter {
 }
 ```
 
-
-
-👆的代码被，解析成:
+​     
+​		
+​							             👆的代码首先被解析成👇
+​		
+​		
 ![day_1_1](./picture/day_1_2.jpeg)
+
+​		
 
 上面的代码解析成了一棵根叫做CompilationUnit(编译单元)的树，他有三个子节点：PackageDeclaration、SingleTypeImportDeclaration、ClassOrInterfaceDeclaration。
 
 代码首先被分类成了个节点:包的声名、单一类型的引用的声明、类或者接口的声明。
 
-
+​		
 
 - PackageDeclaration的子节点是一个QualifiedNameExpr(限定名表达式)，也就可以说PackageDeclaration该节点是由一个QualifiedNameExpr节点。
 
@@ -78,12 +83,14 @@ public class TimePrinter {
   ​	MethodDeclaration类中的方法声明。
 
 
+  ​	
 
+​		
 
 
 ![day_1_1](./picture/day_1_3.jpeg)
 
-
+​		
 
 第三部分MethodDeclaration，展开后，又由上述节点组成。
 
@@ -94,18 +101,18 @@ public class TimePrinter {
 - BlockStmt表示的函数块里的内容。
 
 
+  ​	
 
-
-
+​		
 
 
 ![day_1_1](./picture/day_1_4.jpeg)
 
-
+​		
 
 第四部分BlockStmt细分为ExpressionStmt，表达式语句。然后再一层层继续细化为再不可细分的语法结构。
 
-
+​		
 
 那这些节点到底是怎么分类的呢？
 
@@ -113,7 +120,7 @@ public class TimePrinter {
 
 ![day_1_1](./picture/day_1_5.jpeg)
 
-
+​			
 
 | 类型       |                                |
 | -------- | ------------------------------ |
@@ -124,7 +131,7 @@ public class TimePrinter {
 | stmt     | 声明语句:return、try/catch、for、do等等 |
 | type     | 类型:数组、类、空类型等                   |
 
-
+​		
 
 ##参考
 
