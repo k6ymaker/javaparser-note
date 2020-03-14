@@ -35,7 +35,9 @@ public class TimePrinter {
 
 ![day_2_1](./picture/day_1_2.jpeg)
 
-首先我们先遍历AST中PackageDeclaration、SingleTypeImportDeclaration、ClassOrInterfaceDeclaration这三类节点。
+​		
+
+- 首先我们先遍历AST中PackageDeclaration、SingleTypeImportDeclaration、ClassOrInterfaceDeclaration这三类节点。
 
 ```
 import com.github.javaparser.JavaParser;
@@ -78,6 +80,8 @@ public class Test {
 }
 ```
 
+​		
+
 输出了下面的三个节点(visitor会遍历所有AST的重写visit对应类型节点，并不是按层遍历):
 
 ```java
@@ -99,9 +103,7 @@ public class TimePrinter {
 
 ​		
 
-​		
-
-我们可以在上面的遍历ClassOrInterfaceDeclaration对应的子树中的NameExpr、MethodDeclaration类型的节点。
+- 我们可以在上面的遍历ClassOrInterfaceDeclaration对应的子树中的NameExpr、MethodDeclaration类型的节点。
 
 ```java
 import com.github.javaparser.JavaParser;
@@ -196,9 +198,7 @@ public class TimePrinter {
 
 ​		
 
-​		
-
-然后再试一下按层遍历
+- 然后再试一下按层遍历
 
 ```
 import com.github.javaparser.JavaParser;
